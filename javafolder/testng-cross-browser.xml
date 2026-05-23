@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- 
+TestNG Suite Configuration for Cross-Browser Testing
+Usage: mvn test -Dsuite=testng-cross-browser.xml
+-->
+<suite name="Cross-Browser Testing Suite" verbose="2" parallel="false">
+    
+    <test name="Cross-Browser Search Tests">
+        <classes>
+            <class name="com.example.tests.TestNGCrossBrowserTest">
+                <methods>
+                    <include name="testGoogleSearchPageLoads"/>
+                    <include name="testSearchFunctionality"/>
+                    <include name="testSearchWithQueries"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Optional: Run tests in parallel (warning: requires browser isolation)
+    <test name="Parallel Cross-Browser Tests" parallel="methods" thread-count="4">
+        <classes>
+            <class name="com.example.tests.TestNGCrossBrowserTest"/>
+        </classes>
+    </test>
+    -->
+
+</suite>
